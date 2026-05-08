@@ -51,7 +51,7 @@ getCeldasDSeSector(id:any) {
 // TURNOS
 getAllSectoresConTurnosPorFecha(fecha_turnos:string = (new Date()).toISOString().split("T")[0])
 :Observable<ISector[]> {
-  return this.http.get<ISector[]>("http://localhost:8080/sectores/" + `${fecha_turnos}/`)
+  return this.http.get<ISector[]>("http://localhost:8080/sectores/turnos/" + `${fecha_turnos}/`)
 }
   getAllTurnosBySectorAndDate(fecha:string = new Date().toISOString()):Observable<ITurno[]>{
     return this.http.get<ITurno[]>("http://localhost:8080/turnos/"+`cod_sector/`+`fecha`)

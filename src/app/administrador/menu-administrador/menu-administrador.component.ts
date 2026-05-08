@@ -160,7 +160,7 @@ getSectores(fecha?:string){
    },
    error:(e)=>{
     console.log(e)
-    this.toastr.error(e.error.message)
+    this.toastr.error("No se encontraron sectores")
     } })
 }
 
@@ -203,7 +203,7 @@ eliminarTurno(cod_guardia:number|undefined,cod_sector:string|undefined,
     this.toastr.error(e.error.message)
     } })
   }else{
-    console.log("Guardia osector no encontrado")
+    console.log("Guardia o sector no encontrado")
   }
 }
 
@@ -212,11 +212,9 @@ crearTurno(fecha:string,tipo_turno:string,cod_sector:string,cod_guardia:number){
   const turno:ITurno={fecha:date,tipo_turno:tipo_turno,cod_sector:cod_sector,cod_guardia:cod_guardia}
   this._service_turno.postTurno(turno).subscribe({
     next: (data)=>{
-      console.log("Turno aaaaa")
         this.toastr.success("Turno Creado Con Exito")
     },
     error: (e)=>{
-      console.log("turno errrrorr")
       console.log(e)
       this.toastr.error(e.message)
     }
