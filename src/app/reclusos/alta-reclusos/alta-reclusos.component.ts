@@ -5,7 +5,7 @@ import { ReclusosService } from '../reclusos.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { FormularioReclusoComponent } from '../formulario-recluso/formulario-recluso.component';
 import { FormularioCondenaComponent } from '../../condena/formulario-condena/formulario-condena.component';
-import { ICondena, IRecluso } from '../../shared/entity.interfaces.js';
+import { ICondena, IPena, IRecluso } from '../../shared/entity.interfaces.js';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -61,14 +61,19 @@ nuevaCondena(){
 }
 
 addCondena(nueva_condena:ICondena){
-  this.condenas.push(nueva_condena)
+  //const condena:ICondena = {...nueva_condena,nro_condena:this.condenas.length+1}
+  const condena:ICondena = {...nueva_condena}
+  this.condenas.push(condena)
 }
 
 altaRecluso(){
   if(this.condenas.length===0){
     this.toastr.error("Error: Para dar de alta el Recluso necesita al menos una condena")
   }else{
-  this._service_recluso.postReclusoYCondenas(this.nuevo_recluso,this.condenas).subscribe({
+    const penas:IPena[] = [{fecha_ini:new Date(),condenas:this.condenas}]
+    const recluso = {...this.nuevo_recluso,penas:penas}
+    console.log(recluso)
+  this._service_recluso.postReclusoYCondenas(recluso,this.condenas).subscribe({
     next: (data)=>{
         console.log("Recluso Creado con Exito",data)
         this.toastr.success("Recluso Ha Sido Dado de Alta")

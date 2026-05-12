@@ -16,6 +16,7 @@ export interface IRecluso {
     fecha_nac: Date;
     condenas?: ICondena[];
     penas?: IPena[];
+    pena?: IPena;
     actividades?:IActividad[];
 }
 export interface IActividad{
@@ -31,20 +32,23 @@ export interface IActividad{
 }
 
 export interface ICondena {
-  cod_condena?: number,
+  nro_condena?: number,
   nombre:   string, 
   descripcion?:    string,
   duracion_anios: number,
   duracion_meses: number,
   duracion_dias: number,
+  pena?:IPena
   //orden_de_gravedad: number
 }
 
 export interface IPena{
-    cod_recluso: IRecluso['cod_recluso']
+    cod_recluso?: IRecluso['cod_recluso'],
+    recluso?:IRecluso,
     fecha_ini:    Date,
-    fecha_fin_estimada:   Date,
-    fecha_fin_real:   Date,
+    fecha_fin_estimada?:   Date,
+    fecha_fin_real?:   Date,
+    condenas?: ICondena[];
 }
 
 export interface ICelda {

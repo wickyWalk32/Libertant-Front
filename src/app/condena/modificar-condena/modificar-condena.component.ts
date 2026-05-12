@@ -18,7 +18,7 @@ export class ModificarCondenaComponent {
   constructor(private _service_condena:CondenasService, private toastr:ToastrService){}
 
 modificarCondena(condena_modificada:ICondena){
-  this._service_condena.putCondena(this.condena.cod_condena,condena_modificada).subscribe({
+  this._service_condena.putCondena(this.condena.nro_condena,condena_modificada).subscribe({
     next: (data)=>{
       this.toastr.success(data.message)
     },
