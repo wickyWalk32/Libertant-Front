@@ -26,7 +26,6 @@ import { MenuTurnosComponent } from './turnos/menu-turnos/menu-turnos.component.
 import { MenuSectorComponent } from './sector/menu-sector/menu-sector.component.js';
 
 
-import { CrearTurnosComponent } from './sector/crear-turnos/crear-turnos.component.js';
 
 // MENU
 import { MenuGuardiaComponent } from './guardias/menu-guardia/menu-guardia.component.js';
@@ -78,7 +77,6 @@ export const routes: Routes = [
     //sector
     {path: 'menu/sector', component: MenuSectorComponent},
     {path: 'menu/sector/:sector/detalle-sector', component: DetalleSectorComponent},
-    {path: 'menu/sector/:sector/detalle-sector/crear-turnos', component: CrearTurnosComponent},
     
     
 ];

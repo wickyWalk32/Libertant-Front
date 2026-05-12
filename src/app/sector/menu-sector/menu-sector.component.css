@@ -107,3 +107,7 @@ h6{
   width: fit-content;
   font-size: 1em;
 }
+
+.inhabilitado{
+  background-color: #2a5d7b
+}

@@ -58,8 +58,10 @@ export interface ISector{
     cod_sector:   string;
     nombre:   string;
     descripcion:  string;
+    habilitado: boolean;
     turnos ?: ITurno[];
   }
+
 export interface ITurno{
     cod_turno?:number
     fecha:   string,

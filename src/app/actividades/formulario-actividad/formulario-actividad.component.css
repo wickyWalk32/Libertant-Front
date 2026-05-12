@@ -120,10 +120,6 @@ label {
   text-align: left;
 }
 
-input[type="text"]:focus {
-  border: 2px solid rgb(71, 121, 168);
-
-}
 textarea{
   height: 5em;
   padding:8px;
@@ -134,4 +130,11 @@ input,textarea,select{
       color: #ffffff;
       border: 1.2px solid #2a6de9;
       border-radius: 6px;
+}
+input:focus,textarea:focus,select:focus{
+  outline: none;
+  box-shadow: none;
+  background-color: #0d0a44;
+  border: 1.5px solid #115deb;
+  color: white;
 }

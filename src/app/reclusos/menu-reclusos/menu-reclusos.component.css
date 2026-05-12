@@ -9,7 +9,15 @@ body{
   margin-top: 3em;
 }
 .alta-recluso-btn{
-  width: 25em;
+  border: 2px solid azure;
+  background-color: #030329;
+  width: 20em;
+  border-radius: 20px;
+  color: azure;
+}
+.alta-recluso-btn:hover {
+  background-color: #06063b;
+  color: white;
 }
 
 .alta-recluso-icono {

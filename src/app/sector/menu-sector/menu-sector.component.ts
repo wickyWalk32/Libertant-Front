@@ -51,7 +51,8 @@ eliminarSector(cod_sector:string){
  this._service_sector.deleteOne(cod_sector).subscribe({
    next:(data)=>{
     this.toastr.success(data.message)
-    this.sectores = this.sectores.filter((sector)=>sector.cod_sector!==cod_sector)
+    this.cargarSectores()
+
    },
    error:(e)=>{
     console.log(e)
@@ -62,6 +63,7 @@ eliminarSector(cod_sector:string){
 }
 
 editarSector(sector: ISector) {
+  console.log(sector)
   this._service_sector.selectedSector.set(sector);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
