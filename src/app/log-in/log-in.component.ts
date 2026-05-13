@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, Router, ActivatedRoute} from '@angular/router';
 import { LogInService } from './log-in.service';
 import { ToastrService } from 'ngx-toastr';
-//import { RecaptchaModule } from "ng-recaptcha";
+import { RecaptchaModule } from "ng-recaptcha";
 
 
 @Component({
   selector: 'app-log-in',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule,RouterLink],
+  imports: [FormsModule,ReactiveFormsModule,RouterLink,RecaptchaModule],
   templateUrl: './log-in.component.html',
   styleUrl: './log-in.component.css'
 })
@@ -31,7 +31,11 @@ constructor (private _logIn_service : LogInService , private router:Router,
 
 validarUsuarios(){
   this.noEncontrado = false
-  this._logIn_service.postLogIn(this.form_logIn.value).subscribe({
+  if(this.captchaToken===''){
+    this.toastr.error("Completar capcha")
+    return
+  }
+  this._logIn_service.postLogIn({...this.form_logIn.value,captchaToken:this.captchaToken}).subscribe({
     next: (data)=> {
       console.log(data)
       if(data.status == 202){
@@ -47,7 +51,7 @@ validarUsuarios(){
       if(e.status==404){
         this.toastr.error('Usuario no Encontrado')
       }
-      if(e.status == 401){
+      if(e.status == 401 || e.status == 403){
         this.toastr.error(e.error.message)
         console.log(e)
       }

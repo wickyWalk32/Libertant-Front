@@ -35,8 +35,7 @@ modificarRecluso(recluso_editado:IRecluso){
     },
     error: (e)=>{
       console.log(e)
-      this.toastr.error(e.message)
-
+      this.toastr.error(e.error.message)
     }
   })
 }

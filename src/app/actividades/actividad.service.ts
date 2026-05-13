@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import { IActividad, IServerResponse } from '../shared/entity.interfaces.js';
 import { Observable } from 'rxjs';
+//import dotenv from 'dotenv'
 
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@ body {
   display: grid;
   align-items: center;
   justify-content: center;
-  background-color: rgb(176, 230, 212);
+  background-color: inherit;/* rgb(176, 230, 212);*/
   height: 100vh;
 }
 

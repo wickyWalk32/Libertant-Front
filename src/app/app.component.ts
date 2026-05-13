@@ -13,7 +13,7 @@ import { NgIf } from '@angular/common';
 })
 export class AppComponent implements OnInit{
   isLoginPage = false
-  title = 'Libertadnt-FrontEnd'
+  title = 'Libertant-FrontEnd'
   constructor(private router:Router){
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
