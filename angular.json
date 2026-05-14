@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Libertadnt-FrontEnd": {
+    "FrontEnd-Proyecto": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Libertadnt-FrontEnd:build:production"
+              "buildTarget": "FrontEnd-Proyecto:build:production"
             },
             "development": {
-              "buildTarget": "Libertadnt-FrontEnd:build:development"
+              "buildTarget": "FrontEnd-Proyecto:build:development"
             }
           },
           "defaultConfiguration": "development"
