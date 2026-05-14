@@ -6,7 +6,7 @@ import { ISector } from '../../shared/entity.interfaces.js';
 import { toastrService } from '../../shared/toastr.service.config.js';
 import { ToastrService } from 'ngx-toastr';
 import { FormularioActividadComponent } from '../../actividades/formulario-actividad/formulario-actividad.component.js';
-import { FormularioSectorComponent } from '../formulario-sector/formulario-sector.component.js';
+import { FormularioSectorComponent } from '../formulario-sector/formulario-sector.component';
 
 @Component({
   selector: 'app-menu-sector',

@@ -2,11 +2,11 @@ import { NgFor, NgIf } from '@angular/common';
 import { AfterViewInit, Component, effect, OnInit } from '@angular/core';
 import { IGuardia, ISector, ITurno } from '../../shared/entity.interfaces.js';
 import { ToastrService } from 'ngx-toastr';
-import { SectorService } from '../../sector/sector.service.js';
-import { TurnosService } from '../turnos.service.js';
-import { BuscarGuardiaDinamicoComponent } from '../../guardias/buscar-guardia-dinamico/buscar-guardia-dinamico.component.js';
-import { GuardiasService } from '../../guardias/guardias.service.js';
-declare var bootstrap: any;
+import { SectorService } from '../../sector/sector.service';
+import { TurnosService } from '../turnos.service';
+import { BuscarGuardiaDinamicoComponent } from '../../guardias/buscar-guardia-dinamico/buscar-guardia-dinamico.component';
+import { GuardiasService } from '../../guardias/guardias.service';
+// declare var bootstrap: any;
 @Component({
   selector: 'app-menu-turnos',
   standalone: true,
@@ -44,9 +44,9 @@ constructor(private toastr:ToastrService,
     })
   }
   ngAfterViewInit(): void {
-    document
-      .querySelectorAll('[data-bs-toggle="tooltip"]')
-      .forEach(el => new bootstrap.Tooltip(el));
+    //document
+    //  .querySelectorAll('[data-bs-toggle="tooltip"]')
+    //  .forEach(el => new bootstrap.Tooltip(el));
   }
 selectGuardia(){
   const guardia = this._service_guardia.selectedGuardia();

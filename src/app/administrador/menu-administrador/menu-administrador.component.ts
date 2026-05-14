@@ -1,12 +1,12 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SectorService } from '../../sector/sector.service.js';
+import { SectorService } from '../../sector/sector.service';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { IGuardia, ISector, ITurno } from '../../shared/entity.interfaces.js';
-import { GuardiasService } from '../../guardias/guardias.service.js';
+import { GuardiasService } from '../../guardias/guardias.service';
 import { ToastrService } from 'ngx-toastr';
 import { CdkDragDrop, CdkDropList, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { TurnosService } from '../../turnos/turnos.service.js';
+import { TurnosService } from '../../turnos/turnos.service';
 import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({

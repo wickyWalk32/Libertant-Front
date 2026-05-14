@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IGuardia } from '../../shared/entity.interfaces.js';
-import { GuardiasService } from '../guardias.service.js';
+import { GuardiasService } from '../guardias.service';
 import { NgFor, TitleCasePipe } from '@angular/common';
 
 @Component({

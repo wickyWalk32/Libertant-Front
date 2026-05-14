@@ -1,7 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, effect} from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SectorService } from '../sector.service.js';
+import { SectorService } from '../sector.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

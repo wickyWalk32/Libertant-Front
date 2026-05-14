@@ -69,7 +69,7 @@ describe('GuardiasService', () => {
     const servicePromise = firstValueFrom(guardia_service$);
     mock_response = {status:200}
 
-    const req = httpTesting.expectOne('http://localhost:8080/guardias/1/modificar', 'Request to modify one Guardia');
+    const req = httpTesting.expectOne('http://localhost:8080/guardias/1', 'Request to modify one Guardia');
     expect(req.request.method).toBe('PUT');
     expect(req.request.body).toEqual(mock_guardia_mod);
     
@@ -108,7 +108,7 @@ describe('GuardiasService', () => {
     const mock_guardia_mod :IGuardia = {cod_guardia: 1,nombre: 'Carlos',apellido: 'Deep',dni: 44332212,fecha_ini_contrato: doDate('2014-04-03'),fecha_fin_contrato: doDate('2020-05-23')}
     const guardia_service3$ = service.putGuardia(1,mock_guardia_mod);
     firstValueFrom(guardia_service3$);
-    const req3 = httpTesting.expectOne('http://localhost:8080/guardias/1/modificar', 'Request to modify one Guardia');
+    const req3 = httpTesting.expectOne('http://localhost:8080/guardias/1', 'Request to modify one Guardia');
     expect(req3.request.headers.get('Authorization')).toContain('Bearer')
     
     // POST
